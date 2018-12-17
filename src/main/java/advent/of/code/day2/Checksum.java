@@ -294,7 +294,6 @@ public class Checksum {
                 wystapieniaTrzy++;
             }
 
-
         }
 
         if (wystapieniaDwa >= 1) {
@@ -305,14 +304,14 @@ public class Checksum {
         }
 
 
-        checksum =  allTwo * allThree;
-        System.out.println("dwie takie same litery: " + wystapieniaDwa);
-        System.out.println("trzy takie same litery: " + wystapieniaTrzy);
+        checksum = allTwo * allThree;
+        System.out.println("ilość wystąpienia 2 takich samych liter: " + wystapieniaDwa);
+        System.out.println("ilośc wystąpenia 3 takich samich liter: " + wystapieniaTrzy);
 
-        System.out.println("wystapienie dwoch liczb:" + allTwo);
-        System.out.println("wystapienie trzech liczb liczb:" + allThree);
+        System.out.println("suma wszystkich par:" + allTwo);
+        System.out.println("suma wszystkich potrójnych :" + allThree);
 
-        System.out.println("checksum is: "+ checksum);
+        System.out.println("checksum is: " + checksum);
     }
 
     private static Map<Character, Integer> countNumberOfLetters(String text) {
