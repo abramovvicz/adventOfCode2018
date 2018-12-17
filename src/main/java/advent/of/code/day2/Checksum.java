@@ -268,7 +268,6 @@ public class Checksum {
     public static void main(String[] args) {
 
         String[] data = input.split("\n");
-        outPutMap2(countNumberOfLetters(data[1]));
 
         for (int i = 0; i < data.length; i++) {
             System.out.println(i + " /////////");
@@ -281,32 +280,32 @@ public class Checksum {
 
     private static void outPutMap2(Map<Character, Integer> map) {
 
-        int wystapieniaDwa = 0;
-        int wystapieniaTrzy = 0;
+        int wystapenieDwochTakichSamychLiter = 0;
+        int wystapienieTrzechTakichSamychLiter = 0;
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {   // Mp.Entry klasa, która posiada klucz i wartość
             //mapa przechowuje obiekty
 //                System.out.println("Klucz  " + entry.getKey() + " wartość " + entry.getValue());
 
             if (entry.getValue() == 2) {
-                wystapieniaDwa++;
+                wystapenieDwochTakichSamychLiter++;
             }
             if (entry.getValue() == 3) {
-                wystapieniaTrzy++;
+                wystapienieTrzechTakichSamychLiter++;
             }
 
         }
 
-        if (wystapieniaDwa >= 1) {
+        if (wystapenieDwochTakichSamychLiter >= 1) {
             allTwo += 1;
         }
-        if (wystapieniaTrzy >= 1) {
+        if (wystapienieTrzechTakichSamychLiter >= 1) {
             allThree += 1;
         }
 
 
         checksum = allTwo * allThree;
-        System.out.println("ilość wystąpienia 2 takich samych liter: " + wystapieniaDwa);
-        System.out.println("ilośc wystąpenia 3 takich samich liter: " + wystapieniaTrzy);
+        System.out.println("ilość wystąpienia 2 takich samych liter: " + wystapenieDwochTakichSamychLiter);
+        System.out.println("ilośc wystąpenia 3 takich samich liter: " + wystapienieTrzechTakichSamychLiter);
 
         System.out.println("suma wszystkich par:" + allTwo);
         System.out.println("suma wszystkich potrójnych :" + allThree);
