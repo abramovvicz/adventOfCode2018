@@ -11,6 +11,7 @@ public class Checksum {
 
     static int allTwo = 0;
     static int allThree = 0;
+    static int checksum = 0;
 
     private static String input = "ubkfmdjxyzlbgkrotcepvswaqx\n" +
             "uikfmdkuyzlbgerotcepvswaqh\n" +
@@ -280,36 +281,38 @@ public class Checksum {
 
     private static void outPutMap2(Map<Character, Integer> map) {
 
-        int wystapieniaDwa=0;
-        int wystapieniaTrzy=0;
+        int wystapieniaDwa = 0;
+        int wystapieniaTrzy = 0;
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {   // Mp.Entry klasa, która posiada klucz i wartość
             //mapa przechowuje obiekty
 //                System.out.println("Klucz  " + entry.getKey() + " wartość " + entry.getValue());
 
-            if(entry.getValue()==2)
-            {
+            if (entry.getValue() == 2) {
                 wystapieniaDwa++;
             }
-            if(entry.getValue()==3)
-            {
+            if (entry.getValue() == 3) {
                 wystapieniaTrzy++;
             }
 
 
         }
 
-        if(wystapieniaDwa>=1){
-            allTwo +=1;
+        if (wystapieniaDwa >= 1) {
+            allTwo += 1;
         }
-        if(wystapieniaTrzy>=1){
-            allThree+=1;
+        if (wystapieniaTrzy >= 1) {
+            allThree += 1;
         }
 
+
+        checksum =  allTwo * allThree;
         System.out.println("dwie takie same litery: " + wystapieniaDwa);
         System.out.println("trzy takie same litery: " + wystapieniaTrzy);
 
-        System.out.println("wystapienie dwoch liczb:"+  allTwo);
-        System.out.println("wystapienie trzech liczb liczb:"+  allThree);
+        System.out.println("wystapienie dwoch liczb:" + allTwo);
+        System.out.println("wystapienie trzech liczb liczb:" + allThree);
+
+        System.out.println("checksum is: "+ checksum);
     }
 
     private static Map<Character, Integer> countNumberOfLetters(String text) {
